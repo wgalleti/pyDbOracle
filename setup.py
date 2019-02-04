@@ -133,7 +133,7 @@ setup(
         "Framework :: PyTest",
     ],
     install_requires=[
-        'cx_Oracle', 'dj-config-url'
+        'cx_Oracle', 'dj_database_url'
     ],
     zip_safe=False,
 )

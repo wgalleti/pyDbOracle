@@ -1,7 +1,7 @@
 import cx_Oracle
 from dj_database_url import parse
 
-from pyOracle.erros import OracleMakeTnsError, OracleConnectionError, OracleCommandError
+from pyDbOracle.erros import OracleMakeTnsError, OracleConnectionError, OracleCommandError
 
 
 class Database:

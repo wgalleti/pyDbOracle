@@ -103,12 +103,12 @@ def find_package_data(
     return out
 
 
-PACKAGE = "pyOracle"
-NAME = "pyOracle"
+PACKAGE = "pyDbOracle"
+NAME = "pyDbOracle"
 DESCRIPTION = "Standard Oracle Using (queries, updates, inserts)"
 AUTHOR = "William Galleti"
 AUTHOR_EMAIL = "william.galleti@gmail.com"
-URL = "https://github.com/wgalleti/pyOracle"
+URL = "https://github.com/wgalleti/pyDbOracle"
 VERSION = __import__(PACKAGE).__version__
 
 setup(
@@ -124,13 +124,13 @@ setup(
     packages=find_packages(exclude=["tests.*", "tests"]),
     package_data=find_package_data(PACKAGE, only_in_packages=False),
     classifiers=[
-        "Development Status :: 4 - Production/Stable",
+        "Development Status :: 4 - Beta",
         "Environment :: Console",
         "Intended Audience :: Developers",
         "License :: OSI Approved :: BSD License",
         "Operating System :: OS Independent",
         "Programming Language :: Python :: 3.6",
-        "Framework :: PyTest",
+        "Framework :: Pytest",
     ],
     install_requires=[
         'cx_Oracle', 'dj_database_url'

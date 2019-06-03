@@ -84,6 +84,8 @@ class Database:
         for i in commands_accepteds:
             if i not in command.lower():
                 raise OracleCommandError('SQL Command invalid')
+            else:
+                break
 
         try:
             cursor = self.connection.cursor()

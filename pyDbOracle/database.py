@@ -74,18 +74,17 @@ class Database:
         except Exception as e:
             raise OracleCommandError(e)
 
+    def _valid_command(command):
+        commands_accepteds = ['insert', 'update', 'delete']
+        if command.lower().split(' ')[0] not in commands_accepteds:
+            raise OracleCommandError('SQL Command invalid')
+
     def run(self, **kwargs):
         command = kwargs.get('command', '')
         params = kwargs.get('params', [])
         commit = kwargs.get('commit', True)
 
-        commands_accepteds = ['insert', 'update', 'delete']
-
-        for i in commands_accepteds:
-            if i not in command.lower():
-                raise OracleCommandError('SQL Command invalid')
-            else:
-                break
+        self._valid_command(command)
 
         try:
             cursor = self.connection.cursor()

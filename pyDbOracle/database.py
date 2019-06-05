@@ -74,7 +74,7 @@ class Database:
         except Exception as e:
             raise OracleCommandError(e)
 
-    def _valid_command(command):
+    def _valid_command(self, command):
         commands_accepteds = ['insert', 'update', 'delete']
         if command.lower().split(' ')[0] not in commands_accepteds:
             raise OracleCommandError('SQL Command invalid')

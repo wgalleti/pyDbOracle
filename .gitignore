@@ -8,3 +8,5 @@
 logs
 .ipynb_checkpoints
 *.ipynb
+dist
+*egg-info*

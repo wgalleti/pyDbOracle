@@ -8,12 +8,12 @@ class Database:
 
     def __init__(self, string, auto_connect=True):
         self.connection = None
-        self.rac = False
         self.tns = None
+        self.options = dict()
         self._make_tns_string(string)
 
         if auto_connect:
-            self.connect(rac=True)
+            self.connect()
 
     def _make_tns_string(self, string):
         try:
@@ -24,18 +24,16 @@ class Database:
             host = dbenv.get('HOST')
             port = dbenv.get('PORT')
             service = dbenv.get('NAME')
-            options = dbenv.get('OPTIONS')
-
-            if isinstance(options, dict):
-                self.rac = bool(options.get('threaded', False))
+            self.options = dbenv.get('OPTIONS')
 
             self.tns = cx_Oracle.makedsn(host, port, service_name=service)
         except Exception as e:
             raise OracleMakeTnsError(f'Error on make tns string. Erro: {e}')
 
-    def connect(self, rac=False):
+    def connect(self):
         try:
-            self.connection = cx_Oracle.connect(self.user, self.pwd, self.tns, threaded=self.rac)
+            config = {'user': self.user, 'password': self.pwd, 'dsn':self.tns, **self.options}
+            self.connection = cx_Oracle.connect(**config)
         except cx_Oracle.DatabaseError as e:
             raise OracleConnectionError(f'Error on connect database.\n {self.tns}\nUSER: {self.user}\nERROR: {e}')
 

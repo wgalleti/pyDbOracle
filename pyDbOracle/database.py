@@ -22,9 +22,9 @@ class Database:
             self.user = dbenv.get('USER')
             self.pwd = dbenv.get('PASSWORD')
             host = dbenv.get('HOST')
-            port = dbenv.get('PORT')
+            port = dbenv.get('PORT', 1521)
             service = dbenv.get('NAME')
-            self.options = dbenv.get('OPTIONS')
+            self.options = dbenv.get('OPTIONS', {})
 
             self.tns = cx_Oracle.makedsn(host, port, service_name=service)
         except Exception as e:

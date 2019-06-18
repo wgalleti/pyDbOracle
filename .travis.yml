@@ -1,13 +1,11 @@
 dist: xenial
 language: python
-python:
-    - "3.7.3"
-script:
-  - python -V
+python: "3.7.3"
+script: true
 deploy:
   provider: pypi
-  twine_version: 1.12.1
   user: "wGalleti"
+  distributions: "sdist bdist_wheel"
   password:
     secure: "aVCdmXyKOkDLPB/IoKG5B4+Ea1P4kXQOMcrLgGBZTmqpc5Ac1PiU1+M5N/pFt0bJBr+fOKPXxlncwy06QpGklRd3ijLSP1LxNBXYJ4v5c90E2ugZx+5BC9TUdr/F4TOv3S4V5BA4ATwaGqjAMPy1PxRfjOvolZJR/IzYQgtn7QaLC1vX9te7+yIDPa43gBmtRMYFSyNbBcUAd6gPGhETvodJcSyA0wNhyKuj1fjjAEzkjBhnJj5AoS2LHUGw1NsrO8rf7OZplhHlp4jj91uDlYzrkS82GxdZDHmzpAkADRrvKYuaONk910SLDose5hW6rA3qKFkD8nOaNxF3eTifI8Hn53gaCno4R1iR0p3eW+mwYZv8Hg7/ec+Fli4KlJtFV3+YsILWYHXGIDjQYnpeCuo+GGmDhKK2ojqvlEcl39DS02PGkaOG4619O4Sy+OSAQUTOXQATbwWPdXfqb8OHYY3AmJXevusMoNJsD3eTndkppwgaJ+9GtxVceqwjIPVh1IYXuD47N+YPBrSMXFMcUmI1V203sUPDz/Svn2xNH3HwZt7Upw+JBp8Kd/aAVO6GRE73RxN2iUUG7ax2tNrv2YzQHuapX3T4QW40/XHhfHJiAg2kVNhgE29vbS4tysm43XqIO1hknHV1a/zWOufKrlRSw9XI6622hZeLAKXM9Ms="
   on:

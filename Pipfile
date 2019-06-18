@@ -4,11 +4,11 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
-notebook = "*"
 
 [packages]
 cx_Oracle = "*"
 dj-database-url = "*"
+pytest = "*"
 
 [requires]
 python_version = "3.6"

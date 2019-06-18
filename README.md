@@ -31,6 +31,16 @@ db = Database(str_conn)
 db.info()
 ```
 
+
+### Conexão definindo charset
+
+```Python
+from pyDbOracle.database import Database
+str_conn = 'oracle://<USER>:<PASS>@<HOST>:<PORT>/<INSTANCE>?encoding=utf-8'
+db = Database(str_conn)
+db.info()
+```
+
 ### Executando queries
 
 ```Python

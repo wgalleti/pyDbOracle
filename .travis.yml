@@ -2,6 +2,9 @@ dist: xenial
 language: python
 python:
     - "3.7.3"
+install:
+    - pip install pipenv --upgrade
+    - pipenv sync
 deploy:
   provider: pypi
   user: "wGalleti"

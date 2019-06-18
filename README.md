@@ -80,3 +80,8 @@ data = db.run(command=command, params=params)
 print(data)
 # 1
 ```
+
+
+### Fonts
+
+https://cx-oracle.readthedocs.io/en/latest/index.html
